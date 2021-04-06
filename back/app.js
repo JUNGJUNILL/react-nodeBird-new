@@ -14,6 +14,8 @@ const postRouter =require('./routes/post');
 const postsRouter = require('./routes/posts');
 const userRouter =require('./routes/user'); 
 const hashtagRouter = require('./routes/hashtag');
+const hpp = require('hpp'); 
+const helmet = require('helmet'); 
 
 
 dotenv.config(); //process.env.COOKIE_SECRET 사용할 수 있게 해주는 역할
@@ -26,10 +28,20 @@ db.sequelize.sync()
   .catch(console.error);
 
 
+if(process.env.NODE_ENV === 'production'){
+  app.use(morgan('combined')); //로그 정보가 좀 더 상세 한다고 한다.
 
-app.use(morgan('dev'));
+  //-------------------- 보안에 좀 더 좋다 라고 한다. node로 서버 돌릴 때 필수라고 생각하라고 한다.
+  app.use(hpp());
+  app.use(helmet());
+  //--------------------
+}else{
+  app.use(morgan('dev'));
+}
+
+
 app.use(cors({
-  origin: true,
+  origin: ['http://localhost:3999','backServerAPI.com'],
   credentials: true,//백엔드에 쿠키를 같이 전달하기 위해서
 }));
 
@@ -75,6 +87,6 @@ app.get('/api',(req,res)=>{
 
 // }); 
 
-app.listen(3999,()=>{
+app.listen(80,()=>{
     console.log('서버 실행 중!!'); 
 })

@@ -41,7 +41,7 @@ if(process.env.NODE_ENV === 'production'){
 
 
 app.use(cors({
-  origin: ['http://localhost:3999','backServerAPI.com','http://15.164.234.24'],
+  origin: ['http://localhost:3999','backServerAPI.com','http://15.164.234.24'], //추가
   credentials: true,//백엔드에 쿠키를 같이 전달하기 위해서
 }));
 

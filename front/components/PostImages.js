@@ -4,6 +4,8 @@ import {PlusOutlined} from '@ant-design/icons'
 
 //폴더를 import 하면 index.js를 자동으로 불러온다.
 import ImagesZoom from './ImagesZoom'; 
+import { backUrl } from '../config/config';
+
 
 const PostImages =({images})=>{
 
@@ -24,7 +26,7 @@ const PostImages =({images})=>{
 
         return (
             <div>
-                <img role="presentation" src={`http://localhost:3999/images/${images[0].src}`} alt={images[0].src} onClick={onZoom}/>
+                <img role="presentation" src={`${backUrl}/images/${images[0].src}`} alt={images[0].src} onClick={onZoom}/>
                 {showImagesZoom && <ImagesZoom image={images} onClose={onClose} />}
             </div>
         )
@@ -35,8 +37,8 @@ const PostImages =({images})=>{
 
         return (
             <div>
-                <img role="presentation" style={{width:"50%" ,display:"inline-block"}}  src={`http://localhost:3999/images/${images[0].src}`} alt={images[0].src} onClick={onZoom}/>
-                <img role="presentation" style={{width:"50%" ,display:"inline-block"}}  src={`http://localhost:3999/images/${images[1].src}`} alt={images[1].src} onClick={onZoom}/>
+                <img role="presentation" style={{width:"50%" ,display:"inline-block"}}  src={`${backUrl}/images/${images[0].src}`} alt={images[0].src} onClick={onZoom}/>
+                <img role="presentation" style={{width:"50%" ,display:"inline-block"}}  src={`${backUrl}/images/${images[1].src}`} alt={images[1].src} onClick={onZoom}/>
                 {showImagesZoom && <ImagesZoom image={images} onClose={onClose} />}
             </div>
         )
@@ -45,7 +47,7 @@ const PostImages =({images})=>{
         return(
             <>
             <div>
-                <img role="presentation" style={{width:"50%"}} src={`http://localhost:3999/images/${images[0].src}`} alt={images[0].src} onClick={onZoom}/>
+                <img role="presentation" style={{width:"50%"}} src={`${backUrl}/images/${images[0].src}`} alt={images[0].src} onClick={onZoom}/>
                 <div
                     role="presentation"
                     style={{display:"inline-block",width:"50%",textAlign:"center",verticalAlign:"middle"}}

@@ -4,6 +4,7 @@ import {Form,Input,Button} from 'antd';
 
 import {ADD_POST_REQUEST,UPLOAD_IMAGES_REQUEST,REMOVE_IMAGE} from '../reducers/post';
 import { isDate } from 'moment';
+import { backUrl } from '../config/config';
 
 
 const PostForm = () =>{
@@ -99,7 +100,7 @@ const PostForm = () =>{
             <div>
                 {imagePaths.map((v,i)=>(
                     <div key={v} style={{display:"inline-block"}}>
-                     <img src={`http://localhost:3999/images/${v}`} style={{width:'200px'}}/>
+                     <img src={`${backUrl}/images/${v}`} style={{width:'200px'}}/>
                         <div>
                             <Button onClick={removeImage(i)}>제거</Button>
                         </div>

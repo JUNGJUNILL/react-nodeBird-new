@@ -1,1 +1,1 @@
-export const backUrl = process.env.NODE_ENV === 'production' ? 'http://api.nodebird.com' : 'http://localhost:3999';
+export const backUrl = process.env.NODE_ENV === 'production' ? 'http://3.34.181.209' : 'http://localhost:3999';

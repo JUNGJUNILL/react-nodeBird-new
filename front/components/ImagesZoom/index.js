@@ -2,7 +2,7 @@ import React,{useState,useCallback,useRef} from 'react';
 import Slick from 'react-slick';
 import PropTypes from 'prop-types';
 import { Overlay, Header, CloseBtn, SlickWrapper, ImgWrapper, Indicator, Global } from './styles';
-import { backUrl } from '../config/config';
+import { backUrl } from '../../config/config';
 
     const ImagesZoom = ({image,onClose})=>{
     

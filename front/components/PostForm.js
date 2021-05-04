@@ -76,7 +76,7 @@ const PostForm = () =>{
 
     }); 
 
-    //이미지 제거(프론트에서만 없애기로 구현됨)
+    //이미지 제거(프론트에서만 없애기로 구현됨)!
     const removeImage = useCallback((index)=>()=>{
         dispatch({
             type:REMOVE_IMAGE,

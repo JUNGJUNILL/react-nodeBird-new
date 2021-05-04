@@ -31,7 +31,7 @@ db.sequelize.sync()
 if(process.env.NODE_ENV === 'production'){
   app.use(morgan('combined')); //로그 정보가 좀 더 상세 한다고 한다.
 
-  //-------------------- 보안에 좀 더 좋다 라고 한다. node로 서버 돌릴 때 필수라고 생각하라고 한다.
+  //-------------------- 보안에 좀 더 좋다 라고 한다. node로 서버 돌릴 때 필수라고 생각하라고 한다.!
   app.use(hpp());
   app.use(helmet());
   //--------------------
